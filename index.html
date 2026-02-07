@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -333,6 +333,28 @@
                 opacity: 0;
             }
         }
+
+        /* Bedrijf footer */
+        .business-footer {
+            margin-top: 60px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(199, 56, 102, 0.1);
+            text-align: center;
+        }
+
+        .business-footer p {
+            font-size: 0.95em;
+            color: var(--dark);
+            opacity: 0.6;
+        }
+
+        .creator-name {
+            color: var(--primary);
+            font-weight: 600;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -340,7 +362,7 @@
         <header>
             <h1>Reasons Why</h1>
             <h1>I Love You</h1>
-            <div class="person-name" id="personName">Laranne</div>
+            <div class="person-name" id="personName">[Naam Persoon]</div>
             <p class="subtitle">Klik op de kaartjes om ze om te draaien 💕</p>
         </header>
 
@@ -350,14 +372,19 @@
 
         <footer>
             <p class="footer-message">You mean the world to me</p>
-            <p class="footer-signature">Met alle liefde, <span id="senderName">Thijs</span> ❤️</p>
+            <p class="footer-signature">Met alle liefde, <span id="senderName">[Jouw Naam]</span> ❤️</p>
         </footer>
+
+        <div class="business-footer">
+            <p>Made by <span class="creator-name" id="creatorName">[Jouw Naam]</span></p>
+        </div>
     </div>
 
     <script>
         // ===== PERSONALISATIE - PAS DIT AAN! =====
         const PERSON_NAME = "Laranne";  // Bijv: "Sarah"
         const SENDER_NAME = "Thijs";      // Bijv: "Michael"
+        const CREATOR_NAME = "Thijs #eatingnevercheating";     // Voor de footer - kan zelfde zijn of anders
 
         // Voeg hier je eigen redenen toe! Je kunt er zoveel toevoegen als je wilt
         const REASONS = [
@@ -412,6 +439,7 @@
         // Namen invullen
         document.getElementById('personName').textContent = PERSON_NAME;
         document.getElementById('senderName').textContent = SENDER_NAME;
+        document.getElementById('creatorName').textContent = CREATOR_NAME;
 
         // Kaartjes genereren
         const cardsGrid = document.getElementById('cardsGrid');
@@ -478,10 +506,7 @@
                 clickCount = 0;
             }
             setTimeout(() => clickCount = 0, 500);
-            }
-           const CREATOR_NAME = "2026 © Thijs Quisenaerts";  // Bijv: "Michael" of "Studio XYZ"                                               
-        );
-        const CREATOR_NAME = "[2026 © Thijs Quisenaerts]";  // Bijv: "Michael" of "Studio XYZ"
+        });
     </script>
 </body>
 </html>
